@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ~/lib/urltonix
+mono ~/lib/urltonix/urltonix.exe $@

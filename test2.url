@@ -1,0 +1,115 @@
+the html files in this folder and these selected comments are from http://www.linux.com/articles/53702 8/6/2007
+
+ Jahshaka, Cinelerra, MainActor, etc.
+
+Reference: "Software for 3D/2D Artists, Designers, etc." here http://www.linuxforum.com/forums/index.php?showto<nobr>p<wbr></nobr> ic=53452
+
+#
+Re:Wicked Cool, But... Anonymous Coward January 10, 2007 05:23 PM
+or you can visit and try VHS to DVD and transfer your home video tapes to dvd. You can get a pretty good conversion at a reasonable price from a lot of places. But what are most of these companies lacking? Care and attention to detail! Other ways you get totally amateurish product done with domestic equipment.
+link: http://www.vhs-to-dvd.com/
+
+#
+Re:Wicked Cool, But... Administrator April 28, 2006 01:30 AM
+There's a project being programmed in Mono called <a href="http://www.diva-project.org/">Diva</a>. From the sample videos it looks very promising.
+
+#
+Small correction. Anonymous Coward April 27, 2006 11:23 PM
+If grepping for AUDIO_FORMAT gives a mysterious number instead of the codec, grep for AUDIO_CODEC instead.
+
+#
+dvdauthor xml file Anonymous Coward April 28, 2006 12:22 AM
+"Open your favorite editor and create a file called dvd.xml with the following contents:"
+
+I don't see any contents below this statement. Is it just me? I am at work and using IE6.
+
+#
+Re:dvdauthor xml file Anonymous Coward April 28, 2006 12:45 AM
+Better to use qdvdauthor to master DVD.
+http://qdvdauthor.sourceforge.net/
+
+Works really well
+
+#
+Re:dvdauthor xml file Anonymous Coward April 28, 2006 07:32 AM
+It's not just you. I'm reading it at home in Mozilla, and also was weirded out by the fact that no content follows that statement.
+
+Can the author please fix the article?
+
+#
+Re:dvdauthor xml file Anonymous Coward April 28, 2006 03:21 PM
+Yep Firefox 1.5 here and I can't see anything either.
+
+#
+Re:dvdauthor xml file Administrator April 28, 2006 09:23 PM
+Same here with Firefox 1.5
+
+#
+Or you could do it the lazy way... Anonymous Coward April 28, 2006 02:46 AM
+...you could transcode with AVIDemux2, and author/burn the DVD with DVD Styler. If you must burn using a separate program, you can be lazy and use k3b. Dead simple. Not l33t, but then again, this article isn't exactly an 'enterprise Linux resource' either.<nobr> <wbr></nobr>;-D
+
+And yes, you can edit those viral Intarweb videos with AVIDemux2.
+
+If you're making home movies and you're doing NTSC DVDs, I suggest using Kino, which makes it nearly as dead-simple. You can burn with k3b or use growisofs directly.
+
+I keep intending to write up how I pull my home videos down to 480x480 23.976fps with noise filtering using transcode, but I'm far too lazy to do that.
+
+#
+Check out this link.. Anonymous Coward April 28, 2006 03:16 AM
+http://forums.gentoo.org/viewtopic.php?t=117709
+
+An awesome work from Gentoo Forums guys, excellent, too.
+
+Best
+
+Juan
+
+#
+Doing it the hard way, it can be easier... Anonymous Coward April 28, 2006 04:00 AM
+Get ToVid http://tovid.org/ and conversion is as simple as:
+
+Assuming your video is named myvideo.avi and is wide-screen...
+
+tovid -dvd -pal -wide -in myvideo.avi -out mydvd
+
+will get you a 16:9 PAL DVD-compatible file named mydvd.mpg.
+
+You can then get DVDStyler http://dvdstyler.sourceforge.net/ and craft menus and branching logic if you are up to something complicated. The result can be a DVD structured directory, an ISO or a direct burn to disc.
+
+#
+Re:Doing it the hard way, it can be easier... Anonymous Coward April 28, 2006 04:59 PM
+Or just use tovidgui (from the same site)
+
+Creating a multi-chapter, multi-file from mpg, avi, wmv with a nice front-end menu is just a drag and drop operation.
+
+I've used it several times and always got good results.
+
+#
+Re:Doing it the hard way, it can be easier... Anonymous Coward April 30, 2006 07:08 AM
+Agree. After all while it can prove useful to use a command script from a Terminal in certain situations it's not ideal for everyone. Especially since the Linux community is trying to get Windows users to accept "migration" from Windows to Linux as a possibility. It would be easier to accomplish the task of video file conversion and transfer with tools such as those found in the multimedia section here http://kde-apps.org/
+
+#
+What about a similar yet different situation... Anonymous Coward April 28, 2006 01:33 PM
+What it you had more than one video that you would like to make into one dvd disc with each video being another chapter? Assuming it can be done with multiple files how would you go about it?
+
+Cheers.
+
+#
+Re:What about a similar yet different situation... Anonymous Coward April 30, 2006 05:38 AM
+non-gui tools = disaster in a newbie's hands...<nobr> <wbr></nobr>.....
+
+LOL, I have a 13 year old daughter that just copied and pasted the command in, making the appropriate changes and came to show the finished product off to me.
+
+LOL. Email me and I will have her help you if you like.
+
+"Linux...so easy even Windows Users can eventually figure it out."
+
+#
+Re:What about a similar yet different situation... Anonymous Coward May 03, 2006 01:31 AM
+I don't think the "newbie" was the target audience for this article. When I read it I thought of it as a "quick recipie" for those who already have a bit of experience with the underlying technologies.
+
+#
+Re:What about a similar yet different situation... Anonymous Coward August 10, 2006 09:10 PM
+http://dvdstyler.sourceforge.net/
+
+nuf said.

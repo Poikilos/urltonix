@@ -1,0 +1,19 @@
+#!/bin/sh
+./clean
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+#/target:winexe /win32icon:../icon.ico 
+mcs /out:urltonix.exe AssemblyInfo.cs UniWinForm.cs UniWinForms.cs urltonix.cs IWshRuntimeLibrary_UniWinForms.cs Chunker.cs
+mv urltonix.exe ..
