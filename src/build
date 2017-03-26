@@ -15,5 +15,14 @@ echo
 echo
 echo
 #/target:winexe /win32icon:../icon.ico 
-mcs /out:urltonix.exe AssemblyInfo.cs UniWinForm.cs UniWinForms.cs urltonix.cs IWshRuntimeLibrary_UniWinForms.cs Chunker.cs
-mv urltonix.exe ..
+mcs /out:urltonix.exe AssemblyInfo.cs urltonix.cs IWshRuntimeLibrary.cs 1>out.txt 2>err.txt
+cat out.txt
+if [ ! -f urltonix.exe ]; then
+if [ -f /usr/bin/outputinspector ]; then
+    outputinspector err.txt 1>outputinspector-out.txt 2>outputinspector-err.txt
+fi
+
+else
+mv -f urltonix.exe ..
+
+fi  

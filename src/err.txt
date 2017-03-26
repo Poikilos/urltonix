@@ -1,0 +1,78 @@
+urltonix.cs(43,4): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(44,47): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(45,16): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(53,4): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(75,7): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(162,15): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(164,17): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(165,17): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(169,17): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(173,15): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(178,15): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(179,15): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(183,18): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(187,11): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(188,11): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(189,11): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(216,28): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(226,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(227,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(228,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(229,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(230,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(231,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(232,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(233,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(234,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(235,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(236,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(237,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(238,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(239,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(240,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(241,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(242,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(243,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(244,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(245,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(246,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(247,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(248,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(249,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(250,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(255,5): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(256,5): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(257,5): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(261,4): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(262,4): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(265,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(266,6): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(268,10): error CS0103: The name `UniWinForms' does not exist in the current context
+urltonix.cs(271,4): error CS0103: The name `UniWinForms' does not exist in the current context
+IWshRuntimeLibrary.cs(124,5): error CS0246: The type or namespace name `FileStream' could not be found. Are you missing `System.IO' using directive?
+IWshRuntimeLibrary.cs(125,5): error CS0246: The type or namespace name `BinaryReader' could not be found. Are you missing `System.IO' using directive?
+IWshRuntimeLibrary.cs(126,22): error CS0246: The type or namespace name `FileInfo' could not be found. Are you missing `System.IO' using directive?
+IWshRuntimeLibrary.cs(127,21): error CS0841: A local variable `brNow' cannot be used before it is declared
+IWshRuntimeLibrary.cs(138,25): error CS0103: The name `byarrData' does not exist in the current context
+IWshRuntimeLibrary.cs(142,16): error CS0103: The name `byarrData' does not exist in the current context
+IWshRuntimeLibrary.cs(143,50): error CS0103: The name `byarrData' does not exist in the current context
+IWshRuntimeLibrary.cs(144,13): error CS0103: The name `byarrData' does not exist in the current context
+IWshRuntimeLibrary.cs(146,35): error CS0103: The name `iOffset' does not exist in the current context
+IWshRuntimeLibrary.cs(149,9): error CS0103: The name `iOffset' does not exist in the current context
+IWshRuntimeLibrary.cs(157,21): error CS0029: Cannot implicitly convert type `int' to `bool'
+IWshRuntimeLibrary.cs(164,30): error CS0103: The name `byarrData' does not exist in the current context
+IWshRuntimeLibrary.cs(165,34): error CS0103: The name `byarrData' does not exist in the current context
+IWshRuntimeLibrary.cs(169,7): error CS0103: The name `Console' does not exist in the current context
+IWshRuntimeLibrary.cs(171,8): error CS0103: The name `Console' does not exist in the current context
+IWshRuntimeLibrary.cs(172,18): error CS0029: Cannot implicitly convert type `int' to `bool'
+IWshRuntimeLibrary.cs(174,7): error CS0103: The name `Console' does not exist in the current context
+IWshRuntimeLibrary.cs(177,10): error CS0019: Operator `>' cannot be applied to operands of type `bool' and `int'
+IWshRuntimeLibrary.cs(178,34): error CS0029: Cannot implicitly convert type `bool' to `int'
+IWshRuntimeLibrary.cs(179,60): error CS0029: Cannot implicitly convert type `bool' to `int'
+IWshRuntimeLibrary.cs(183,13): error CS0019: Operator `!=' cannot be applied to operands of type `int' and `bool'
+IWshRuntimeLibrary.cs(186,37): error CS0103: The name `Console' does not exist in the current context
+IWshRuntimeLibrary.cs(187,11): error CS0103: The name `Console' does not exist in the current context
+IWshRuntimeLibrary.cs(190,11): error CS0246: The type or namespace name `Exception' could not be found. Are you missing `System' using directive?
+IWshRuntimeLibrary.cs(195,10): error CS0103: The name `brNow' does not exist in the current context
+IWshRuntimeLibrary.cs(197,10): error CS0103: The name `fsNow' does not exist in the current context
+IWshRuntimeLibrary.cs(199,11): error CS0103: The name `link' does not exist in the current context
