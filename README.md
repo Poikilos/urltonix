@@ -70,10 +70,12 @@ the path to urltonix.exe after \"mono\" as shown above).
 
 ## Known Issues
 * allow opening of non-executable files, and load appropriate wine WINDOWS application or select from list of installed windows apps!
+    * change paths before forwarding to wine programs: change / to Z:/ then change slashes to backslashes
 * Fix bad .url (check as case insensitive!) files--change to:
 	"[InternetShortcut][\r\n]" --must be CRLF, \r\n
 	"URL=http://www[...]"
 * Add support for LNK files
+    * NOTE: supposedly this is not needed, however, wine windows program loader doesn't seem to work with lnk files created on linux desktop by wine after installing Adobe PhotoShop Elements 5.0 (R)
 	* lnk files can be unicode, and contain binary data
 	* maintain a list of possible paths to C: and to D: separately.
 	* remember to change '\' to '/'!

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Adobe Photoshop Elements 5.0
+Exec=env WINEPREFIX="/home/owner/win32" /usr/bin/wine C:\\\\Program\\ Files\\\\Adobe\\\\Photoshop\\ Elements\\ 5.0\\\\Photoshop\\ Elements\\ 5.0.exe 
+Type=Application
+StartupNotify=true
+Icon=29F5_Photoshop Elements 5.0.0
