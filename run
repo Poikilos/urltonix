@@ -1,6 +1,6 @@
 echo
 echo "This is only a test of urltonix..."
 echo
-cd ..
+cd bin
 mono urltonix.exe test1.url
-cd src
+cd ..

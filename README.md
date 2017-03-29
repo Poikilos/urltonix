@@ -61,6 +61,7 @@ the path to urltonix.exe after \"mono\" as shown above).
 
 
 ## Changes
+* (2017-03-29) Placed IWshRuntimeLibrary_UniWinForms.cs back into this project (from UniWinForms)
 * dig through file for all urls including href="" or lines that include http end url with newline
 	* allow enders other than newline (in this order!) ". ", " ", "<", ".&nbsp;", "&nbsp;"
 * upon load, automatically convert files with url extension but start with "http" to windows internet shortcuts ("[InternetShortcut]\n\rURL=")

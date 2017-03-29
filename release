@@ -1,0 +1,24 @@
+#!/bin/sh
+#sVer=$(date +%Y%m%d-%k.%M)
+sVer=$(date +%Y%m%d)
+echo "1.0-$sVer" > 1.Version.txt
+sFolder="urltonix"
+echo "Publishing revision $sVer"
+cd ~/GitHub
+rm -Rvf $sFolder-$sVer
+mkdir $sFolder-$sVer
+cp -R --no-dereference $sFolder/* $sFolder-$sVer
+rm $sFolder-$sVer/release
+rm $sFolder-$sVer/*~
+rm $sFolder-$sVer/bin/*~
+rm $sFolder-$sVer/UniWinForms.cs
+cp ~/GitHub/UniWinForms/UniWinForms.cs $sFolder-$sVer
+cp ~/GitHub/UniWinForms/UniWinForm.cs $sFolder-$sVer
+cp ~/GitHub/UniWinForms/Chunker.cs $sFolder-$sVer
+rm $sFolder-$sVer/bin/lib-$sFolder
+zip -r $sFolder-$sVer.zip $sFolder-$sVer
+rm -Rvf $sFolder-$sVer
+mkdir ~/ownCloud/www/expertmultimedia/releases/$sFolder
+mv -f $sFolder-$sVer.zip ~/ownCloud/www/expertmultimedia/releases/$sFolder/
+echo
+echo "Finished."

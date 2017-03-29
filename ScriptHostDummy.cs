@@ -1,13 +1,11 @@
-//Purpose: This is a set of classes to replace IWshRuntimeLibrary.dll
+//Purpose: This is a set of classes to replace IWshRuntimeLibrary.dll (which is a wrapper for wshom.ocx, which is Microsoft Windows (R) Script Host), for cross platform use of certain aspects of it.
+//File: formerly IWshRuntimeLibrary.cs, formerly IWshRuntimeLibrary_UniWinForms.cs
 //Originally developed by: expertmm (for UniWinForms)
-//File: IWshRuntimeLibrary.cs
-//License: GPL 3.0
 
 namespace IWshRuntimeLibrary {
 	public class IWshShortcut {
 		public string TargetPath="";//TODO: change to a get accessor
 		public string WorkingDirectory="";//TODO: change to a get accessor
-		
 
 		public const uint Flag_HasShellItemIDList=1;
 		public const uint Flag_PointsToFileOrDir_NotSomethingElse=2;
@@ -43,7 +41,7 @@ namespace IWshRuntimeLibrary {
 		public const uint SW_SHOWNA=8;
 		public const uint SW_RESTORE=9;
 		public const uint SW_SHOWDEFAULT=10;
-  
+
 		//START HEADER
 		uint dwL=(uint)'L';//always 'L'
 		byte[] byarrGuid=new byte[]{0x01, 0x14, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46};//always 16 bytes, always {00021401-0000-0000-00C0-000000000046}
@@ -100,7 +98,7 @@ namespace IWshRuntimeLibrary {
 		uint dwNetworkVolumeTable_Unknown2=0;//0 (always?)
 		uint dwNetworkVolumeTable_Unknown3=0x20000;//131072 (always?)
 		string sNetworkShareName="";//load/save as null-terminated ascii string
-		
+
 		ushort wDescriptionLen=0;//only present if ( 0 != (Flags & Flag_HasDescription) )
 		string sDescription="";//only present if ( 0 != (Flags & Flag_HasDescription) )
 		ushort wRelPathLen=0;//only present if ( 0 != (Flags & Flag_HasRelPath) )
@@ -113,7 +111,6 @@ namespace IWshRuntimeLibrary {
 		string sIconFileName; //only present if ( 0 != (Flags & Flag_HasCustomIcon) )
 		uint dwFooterDumpLen=0;//usually 0
 		byte[] byarrFooterDump=null;
-		
 	}//end IWshShortcut
 	public class WshShell {
 		public static string sForeignPathDelimiter { get {return char.ToString(cForeignPathDelimiter);} }
