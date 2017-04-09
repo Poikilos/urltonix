@@ -16,10 +16,11 @@ echo
 echo
 #/target:winexe /win32icon:../icon.ico
 mcs /out:bin/urltonix.exe AssemblyInfo.cs urltonix.cs ScriptHostDummy.cs 1>out.txt 2>err.txt
+# ../UniWinForms/UniWinForms.cs ../UniWinForms/UniWinForm.cs /r:System.Drawing /r:System.Windows.Forms 
 cat out.txt
 if [ ! -f bin/urltonix.exe ]; then
 if [ -f /usr/bin/outputinspector ]; then
-    outputinspector err.txt 1>outputinspector-out.txt 2>outputinspector-err.txt
+    outputinspector err.txt 1>outputinspector-out.txt 2>outputinspector-err.txt &
 fi
 
 else

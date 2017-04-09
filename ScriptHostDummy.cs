@@ -2,6 +2,9 @@
 //File: formerly IWshRuntimeLibrary.cs, formerly IWshRuntimeLibrary_UniWinForms.cs
 //Originally developed by: expertmm (for UniWinForms)
 
+using System;
+using System.IO;
+
 namespace IWshRuntimeLibrary {
 	public class IWshShortcut {
 		public string TargetPath="";//TODO: change to a get accessor
@@ -115,13 +118,23 @@ namespace IWshRuntimeLibrary {
 	public class WshShell {
 		public static string sForeignPathDelimiter { get {return char.ToString(cForeignPathDelimiter);} }
 		public static char cForeignPathDelimiter='\\';
-		public IWshShortcut CreateShortcut(string sFileX) { //TODO: in the real WshShell class this really returns something else that can be typecast to a IWshShortcut -- find out what
+		public IWshShortcut CreateShortcut(string sFile) { //TODO: in the real WshShell class this really returns something else that can be typecast to a IWshShortcut -- find out what
+            IWshShortcut link=null;
+            FileStream fsNow=null;
+            BinaryReader brNow=null;
+            string sParticiple="<before initializing>";
 			try {
-				IWshShortcut link=new IWshShortcut();
-				FileStream fsNow=new FileStream(sFile, FileMode.Open, FileAccess.Read);
-				BinaryReader brNow = new BinaryReader(fsNow);
+                sParticiple="creating IWshShortcut";
+				link=new IWshShortcut();
+				sParticiple="creating FileStream";
+				fsNow=new FileStream(sFile, FileMode.Open, FileAccess.Read);
+				sParticiple="creating BinaryReader";
+				brNow = new BinaryReader(fsNow);
+				sParticiple="getting FileInfo";
 				long nBytes=(new FileInfo(sFile)).Length;
-				byte[] barrData=brNow.ReadBytes((int)nBytes);
+				sParticiple="reading bytes";
+				byte[] byarrData=brNow.ReadBytes((int)nBytes);
+				
 				int iPos=0;
 				int iPosStrucNow=0;
 				//TODO: finish this:
@@ -132,6 +145,7 @@ namespace IWshRuntimeLibrary {
 				int[] iarrStringLen=new int[iStringsMax];
 				int iFindNow;
 				int iEnder;
+				sParticiple="interpreting bytes";
 				while (iOffsetNow+1<byarrData.Length && iStrings<iStringsMax) {
 					 iFindNow=-1;
 					 iEnder=-1;
@@ -140,10 +154,10 @@ namespace IWshRuntimeLibrary {
 						for (int iEnderNow=iOffsetNow+1; iEnderNow<byarrData.Length; iEnderNow++) {
 							 if (byarrData[iEnderNow]=='\0'||iEnderNow==byarrData.Length) {
 								iEnder=iEnderNow;
-								iarrStringStart[iStrings]=iOffset-1;
+								iarrStringStart[iStrings]=iOffsetNow-1;
 								iarrStringLen[iStrings]=iEnder-iarrStringStart[iStrings];
 								iStrings++;
-								iOffset=iEnder+1;
+								iOffsetNow=iEnder+1;
 								break;
 							 }//end if found null-terminator
 						}//end for looking for ender (iEnderNow starts at iOffsetNow+1)
@@ -151,10 +165,11 @@ namespace IWshRuntimeLibrary {
 					 //}//end for iNow (looking for ":\" ; starts at offset)
 					 if (iEnder==-1) break;
 				}//end while Offset not too close to end
-				bool iFoundExe=-1;
+				int iFoundExe=-1;
 				string[] sarrResults=null;
 				link.WorkingDirectory="";
 				link.TargetPath="";
+				sParticiple="interpreting strings";
 				if (iStrings>0) {
 					sarrResults=new string[iStrings];
 					string sData="";
@@ -185,7 +200,7 @@ namespace IWshRuntimeLibrary {
 				}//end if iStrings>0
 			}
 			catch (Exception exn) {
-				Console.Error.WriteLine("Error in wshshell CreateShortcut while "+sVerb+":");
+				Console.Error.WriteLine("Error in wshshell CreateShortcut while "+sParticiple+":");
 				Console.Error.WriteLine(exn.ToString());
 				Console.Error.WriteLine();
 			}

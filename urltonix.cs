@@ -5,7 +5,7 @@ using System.IO;
 using System.Threading;
 using IWshRuntimeLibrary; //needs IWshRuntimeLibrary.dll
  
-namespace OrangejuiceElectronica {
+namespace ExpertMultimedia {
 	public class UrlToNix {
 		public static string sFile="";
 		public static string sBrowserNow="(before initialization)";
@@ -40,7 +40,7 @@ namespace OrangejuiceElectronica {
 			return bFound;
 		}
 		public static void Main(string[] sarrArg) {
-			UniWinForms.sFileOutput=Environment.GetFolderPath(Environment.SpecialFolder.Personal)+"/lib/urltonix/1.Output.txt"; //sFileOutput=UniWinForms.SpecialFolderByName("Personal")+"/lib/urltonix/1.Output.txt";
+			//UniWinForms.sFileOutput=Environment.GetFolderPath(Environment.SpecialFolder.Personal)+"/lib/urltonix/1.Output.txt"; //sFileOutput=UniWinForms.SpecialFolderByName("Personal")+"/lib/urltonix/1.Output.txt";
 			if (File.Exists("1.Version.txt")) sVersion=UniWinForms.FileToString("1.Version.txt");
 			sBrowserNow=UniWinForms.AnOpenBrowserName();
 			bWait=true;
@@ -50,7 +50,7 @@ namespace OrangejuiceElectronica {
 			}
 			string sVerb="starting";
 			StreamReader srNow=null;
-			UniWinForms.WriteLine("(debug output file is \""+UniWinForms.sFileOutput+"\")");
+			//UniWinForms.WriteLine("(debug output file is \""+UniWinForms.sFileOutput+"\")");
 			string sCumulative="";
 			string sAllTried="";
 			sWholeCommand="";
@@ -159,34 +159,34 @@ namespace OrangejuiceElectronica {
 											 //}
 											 try {
 												  if (iDone==1||iDone==0) { //==0 to prevent errors when program was just called but firefox isn't finished loading
-													 UniWinForms.WriteLine();
+													 Console.WriteLine();
 													 if (bWait) {
-														  UniWinForms.WriteLine("   Waiting for browser (prevents \"Firefox is already open\" errors)...");
-														  UniWinForms.WriteLine();
+														  Console.WriteLine("   Waiting for browser (prevents \"Firefox is already open\" errors)...");
+														  Console.WriteLine();
 														  Thread.Sleep(7000); //allows browser to load before dumping more stuff into it and confusing it (i.e. prevents "firefox already running" errors)
 													 }
 													 else {
-														  UniWinForms.WriteLine("   Detected "+sBrowserNow+" so skipping program open delay.");
+														  Console.WriteLine("   Detected "+sBrowserNow+" so skipping program open delay.");
 													 }
 												  }
 												  iFoundUrls++;
-												  UniWinForms.WriteLine("   Telling computer to run: \""+sCommand+"\"");
+												  Console.WriteLine("   Telling computer to run: \""+sCommand+"\"");
 												  proc.Start();
 												  iDone++;
 											 }
 											 catch (Exception exn) {
-												  UniWinForms.WriteLine("   OS could not execute \""+sCommand+"\"");
-												  UniWinForms.WriteLine("      "+exn.ToString());
+												  Console.WriteLine("   OS could not execute \""+sCommand+"\"");
+												  Console.WriteLine("      "+exn.ToString());
 											 }
 											 //proc.WaitForExit();
 										  }//end if sCommand!=""
-										  else UniWinForms.WriteLine("   NO URL in "+sFile+" LINE "+iLine.ToString());//+": "+sLine);
+										  else Console.WriteLine("   NO URL in "+sFile+" LINE "+iLine.ToString());//+": "+sLine);
 									 }//end if not blank
 								  }
 								  catch (Exception exn) {
-									 UniWinForms.WriteLine("   Exception error while "+sVerb+".");
-									 UniWinForms.WriteLine();
-									 UniWinForms.WriteLine("   "+exn.ToString());
+									 Console.WriteLine("   Exception error while "+sVerb+".");
+									 Console.WriteLine();
+									 Console.WriteLine("   "+exn.ToString());
 								  }
 								  iLine++;
 							 }//end while ReadLine
@@ -213,62 +213,62 @@ namespace OrangejuiceElectronica {
 								  swNow.Close();
 								  sVerb="rewriting url file format: after closing file";
 							 }//end if ends with ".url"
-							 if (iFoundUrls<=0) UniWinForms.WriteLine("   No lines were found except "+((sLastComment!="")?("comments (i.e. "+sLastComment+")"):"blanks")+" in "+sFile);
+							 if (iFoundUrls<=0) Console.WriteLine("   No lines were found except "+((sLastComment!="")?("comments (i.e. "+sLastComment+")"):"blanks")+" in "+sFile);
 							}//end else not lnk file
 						}//end if file exists
 					}//end if parameter in sarrArg is not the program itself
 					//else {
-						//UniWinForms.WriteLine("The file was not found, so nothing was done.");
+						//Console.WriteLine("The file was not found, so nothing was done.");
 					//}
 					iArg++;
 				}//end foreach sFile in sarrArg
 				if (iFoundFiles<=0) {
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("   Welcome to "+sMyName);
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("   To use this program, type");
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("      mono "+sMiniName+".exe filename.url");
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("   where filename.url is the URL file that you want to execute");
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("   OR");
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("   create a \"File Association\" (i.e. in \"Settings\", \"Configure Konqueror\" in KDE browser)");
-					UniWinForms.WriteLine("   for *.URL and *.url file masks and use \"mono ./"+sMiniName+".exe\"");
-					UniWinForms.WriteLine("   as the preferred application where '.' is the directory");
-					UniWinForms.WriteLine("   where "+sMiniName+".exe is located.");
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("   TROUBLESHOOTING: after making the file association, make sure that");
-					UniWinForms.WriteLine("   the full command for the preferred application is used");
-					UniWinForms.WriteLine("   as of Konqueror 3.5.6-0.1.fc6, Konqueror reverts to using \"mono\",");
-					UniWinForms.WriteLine("   so after setting the association you have to go back and re-add");
-					UniWinForms.WriteLine("   the path to "+sMiniName+".exe after \"mono\" as shown above.");
-					UniWinForms.WriteLine();
-					UniWinForms.WriteLine("                     http://www.expertmultimedia.com/orangejuice/");
-					UniWinForms.WriteLine();
+					Console.WriteLine();
+					Console.WriteLine("   Welcome to "+sMyName);
+					Console.WriteLine();
+					Console.WriteLine();
+					Console.WriteLine("   To use this program, type");
+					Console.WriteLine();
+					Console.WriteLine("      mono "+sMiniName+".exe filename.url");
+					Console.WriteLine();
+					Console.WriteLine("   where filename.url is the URL file that you want to execute");
+					Console.WriteLine();
+					Console.WriteLine("   OR");
+					Console.WriteLine();
+					Console.WriteLine("   create a \"File Association\" (i.e. in \"Settings\", \"Configure Konqueror\" in KDE browser)");
+					Console.WriteLine("   for *.URL and *.url file masks and use \"mono ./"+sMiniName+".exe\"");
+					Console.WriteLine("   as the preferred application where '.' is the directory");
+					Console.WriteLine("   where "+sMiniName+".exe is located.");
+					Console.WriteLine();
+					Console.WriteLine("   TROUBLESHOOTING: after making the file association, make sure that");
+					Console.WriteLine("   the full command for the preferred application is used");
+					Console.WriteLine("   as of Konqueror 3.5.6-0.1.fc6, Konqueror reverts to using \"mono\",");
+					Console.WriteLine("   so after setting the association you have to go back and re-add");
+					Console.WriteLine("   the path to "+sMiniName+".exe after \"mono\" as shown above.");
+					Console.WriteLine();
+					Console.WriteLine("                     http://www.expertmultimedia.com/orangejuice/");
+					Console.WriteLine();
 				}
 				bGood=iFoundUrls>0;
 			}
 			catch (Exception exn) {
-				UniWinForms.WriteLine("   Exception error while "+sVerb+".");
-				UniWinForms.WriteLine();
-				UniWinForms.WriteLine("   "+exn.ToString());
+				Console.WriteLine("   Exception error while "+sVerb+".");
+				Console.WriteLine();
+				Console.WriteLine("   "+exn.ToString());
 			}
-			//if (!bGood) UniWinForms.WriteLine("Finished unsuccessfully...");
-			//UniWinForms.WriteLine("(Finished "+iCount.ToString()+" commands)");
-			UniWinForms.WriteLine();
-			UniWinForms.WriteLine("   Program Finished "+(bGood?"(Success)":"(nothing done)"));
+			//if (!bGood) Console.WriteLine("Finished unsuccessfully...");
+			//Console.WriteLine("(Finished "+iCount.ToString()+" commands)");
+			Console.WriteLine();
+			Console.WriteLine("   Program Finished "+(bGood?"(Success)":"(nothing done)"));
 			if (!bGood) {
 				if (sAllTried!="") {
-					UniWinForms.WriteLine("      Tried to find files:");
-					UniWinForms.WriteLine(sAllTried);
+					Console.WriteLine("      Tried to find files:");
+					Console.WriteLine(sAllTried);
 				}
-				else UniWinForms.WriteLine("      No files specified in command \""+sWholeCommand+"\".");
+				else Console.WriteLine("      No files specified in command \""+sWholeCommand+"\".");
 			}
 			//Console.ReadLine();
-			UniWinForms.WriteLine();
+			Console.WriteLine();
 		}//end main
 	}//end UrlToNix
 }//end namespace
