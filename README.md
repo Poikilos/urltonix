@@ -1,11 +1,11 @@
 # urltonix
 ("URL To 'Nix")
-by expertmm
+by poikilos
 Windows(R) filetype handler for GNU/Linux (should work on other unix variants as well), for URL files
-http://www.github.com/expertmm
+http://www.github.com/poikilos
 This program is distributed under the GPL 3.0 (see LICENSE file)
 
-## This program is deprecated in favor of [https://github.com/expertmm/filehandoff](https://github.com/expertmm/filehandoff)
+## This program is deprecated in favor of [https://github.com/poikilos/filehandoff](https://github.com/poikilos/filehandoff)
 
 ## Requirements
 * A non-Windows OS that has mono (and shell script recommended)
